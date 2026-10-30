@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive beginner-friendly AI Digital Forensics Concepts Study Kit.">
+  <title>ForenSight | AI Digital Forensics Study Kit</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">F</span><span>ForenSight<small> DIGITAL FORENSICS STUDY KIT</small></span></a>
+    <nav><a href="#learn">Learn</a><a href="#lab">Practice Lab</a><a href="#quiz">Quiz</a><a href="#coach">AI Coach</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">LEARN · INVESTIGATE · VERIFY</p>
+        <h1>Understand the evidence.<br><span>Follow the facts.</span></h1>
+        <p class="hero-text">A hands-on study kit for core digital forensics concepts, evidence handling, investigation workflows and responsible analysis.</p>
+        <div class="hero-actions"><a class="btn primary" href="#learn">Start learning</a><a class="btn secondary" href="#lab">Open practice lab</a></div>
+        <p class="disclaimer">Educational simulator · Uses fictional sample data · No real device or evidence is accessed</p>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="shield"><div class="shield-inner">⌁</div><b> EVIDENCE<br>INTEGRITY</b><small>HASH · VERIFY · DOCUMENT</small></div>
+        <div class="float-tag tag-a">SHA-256 <strong>✓</strong></div>
+        <div class="float-tag tag-b">CHAIN OF CUSTODY <strong>↗</strong></div>
+        <div class="float-tag tag-c">TIMELINE <strong>◷</strong></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><strong id="progressStat">0%</strong><span>Learning progress</span></div>
+      <div><strong>08</strong><span>Core modules</span></div>
+      <div><strong>05</strong><span>Practice questions</span></div>
+      <div><strong>01</strong><span>Simulated case</span></div>
+    </section>
+
+    <section class="section" id="learn">
+      <div class="section-heading"><div><p class="eyebrow">01 / KNOWLEDGE BASE</p><h2>Explore the concepts</h2></div><p>Choose a module to review concise notes, key terms and practical reminders.</p></div>
+      <div class="module-layout">
+        <div class="module-list" id="moduleList"></div>
+        <article class="lesson-card" id="lessonCard" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <section class="section lab-section" id="lab">
+      <div class="section-heading"><div><p class="eyebrow">02 / INTERACTIVE SCENARIO</p><h2>Digital evidence practice lab</h2></div><p>Work through a fictional USB-drive investigation and make evidence-handling decisions.</p></div>
+      <div class="lab-grid">
+        <div class="case-card">
+          <div class="case-label"><span class="status-dot"></span> TRAINING CASE · DF-2026-014</div>
+          <h3>Unfamiliar USB device</h3>
+          <p>A staff member reports that an unknown USB drive was found in a shared computer lab. Your task is to plan a safe, documented examination.</p>
+          <div class="case-facts"><div><small>ITEM</small><b>USB-014</b></div><div><small>CAPACITY</small><b>16 GB (fictional)</b></div><div><small>STATUS</small><b>Unexamined</b></div></div>
+          <div class="warning"><b>Remember:</b> Do not connect unknown media to a normal workstation. Real investigations require approved procedures, trained personnel and appropriate write-blocking equipment.</div>
+        </div>
+        <div class="decision-card">
+          <p class="eyebrow">YOUR INVESTIGATION PLAN</p>
+          <h3 id="scenarioQuestion">What should happen first?</h3>
+          <div id="scenarioOptions" class="scenario-options"></div>
+          <div id="scenarioFeedback" class="feedback" aria-live="polite">Choose an action to see the reasoning.</div>
+          <button class="btn secondary" id="nextScenario" disabled>Next decision →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quiz">
+      <div class="section-heading"><div><p class="eyebrow">03 / CHECK YOUR UNDERSTANDING</p><h2>Knowledge check</h2></div><p>Five questions covering evidence integrity, acquisition, metadata and reporting.</p></div>
+      <div class="quiz-card">
+        <div class="quiz-top"><span id="quizCount">QUESTION 1 / 5</span><span id="quizScore">Score: 0</span></div>
+        <div class="quiz-progress"><span id="quizProgress"></span></div>
+        <h3 id="quizQuestion"></h3>
+        <div id="quizAnswers" class="quiz-answers"></div>
+        <div id="quizFeedback" class="feedback" aria-live="polite"></div>
+        <button class="btn primary" id="quizNext" disabled>Next question →</button>
+      </div>
+    </section>
+
+    <section class="section coach-section" id="coach">
+      <div class="section-heading"><div><p class="eyebrow">04 / STUDY SUPPORT</p><h2>AI study coach</h2></div><p>Ask for a plain-language explanation, a comparison or a short revision prompt.</p></div>
+      <div class="coach-card">
+        <div class="coach-intro"><div class="coach-icon">✳</div><div><h3>Concept companion</h3><p>This demo uses a built-in knowledge guide. It does not send your questions to an external AI service.</p></div></div>
+        <div class="prompt-chips"><button class="chip">Explain chain of custody</button><button class="chip">Hashing vs encryption</button><button class="chip">What is a forensic image?</button></div>
+        <form id="coachForm"><input id="coachInput" type="text" placeholder="Ask about a digital forensics concept..." autocomplete="off"><button class="btn primary">Ask coach</button></form>
+        <div id="coachResponse" class="coach-response" aria-live="polite">Try asking a question above. The coach can explain the study-kit topics and suggest what to revise next.</div>
+      </div>
+    </section>
+
+    <section class="section glossary-section">
+      <div class="section-heading"><div><p class="eyebrow">05 / QUICK REFERENCE</p><h2>Mini glossary</h2></div><input id="glossarySearch" class="search" type="search" placeholder="Search terms..."></div>
+      <div id="glossary" class="glossary-grid"></div>
+    </section>
+  </main>
+  <footer><div class="brand"><span class="brand-mark">F</span><span>ForenSight<small> DIGITAL FORENSICS STUDY KIT</small></span></div><p>Made for learning. Not a substitute for professional forensic procedures, legal advice or institutional policy.</p><p>© 2026 ForenSight · Open educational project</p></footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>
